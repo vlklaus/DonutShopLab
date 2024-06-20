@@ -1,0 +1,8 @@
+<h1><a [href]="displayDonut.photo_attribution">{{displayDonut.name}}</a></h1>
+<p>{{displayDonut.calories}} calories</p>
+<p>Extras:</p>
+@for (e of displayDonut.extras; track $index) {
+    <li>{{e}}</li>
+}
+<img height="400px" src={{displayDonut.photo}}>
+<button (click)="addToCart()">Add To Cart</button>

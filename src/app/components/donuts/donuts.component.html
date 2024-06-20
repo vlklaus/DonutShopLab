@@ -1,0 +1,8 @@
+<h1>Donuts</h1>
+<ul>
+    @for (d of allDonuts.results; track d.id) {
+        <li>
+            <p [routerLink]="['/', d.id]">{{d.name}}</p>
+        </li>
+    }
+</ul>

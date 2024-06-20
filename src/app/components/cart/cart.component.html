@@ -1,0 +1,25 @@
+<h1>Cart</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Calories</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th></th>
+    </tr>
+    @for (item of getCartDistinct(); track $index) {
+        <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.calories}}</td>
+            <td>$1.00</td>
+            <td>x{{getItemQuantity(item)}}</td>
+            <td><button (click)="deleteItem(item)">X</button></td>
+        </tr>
+        }
+
+
+</table>
+
+
+<h3>Total: ${{getCart().length}}.00</h3>
+<h3>Calorie Count: {{getCalories(getCart())}} cals</h3>
